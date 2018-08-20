@@ -35,24 +35,32 @@ class App extends Component {
       })
       .catch(function (error) {
         console.log(error);
+        self.setState({error: error});
       });
   }
 
   render() {
-    const { items } = this.state;
+    const { error, items } = this.state;
     return (
       <Container>
         <h1>Packagist</h1>
-        <p>Search PHP package repository</p>        
+        <p>Search PHP package repository</p>     
         <form className="form-inline" onSubmit={this.handleSubmit}>
           <div className="form-group mr-2 mb-2">
             <label htmlFor="pack" className="sr-only">Package</label>
-            <input className="form-control" id="pack" type="text" value={this.state.pack} onChange={this.handleChange} />
+            <input className="form-control" id="pack" type="text" placeholder="Package..." value={this.state.pack} onChange={this.handleChange} title="Type the package to search" />
           </div>
-          <button type="submit" className="btn btn-primary mb-2">Search</button>
+          <button type="submit" className="btn btn-primary mb-2" title="Start a research">Search</button>
         </form>
 
         <p>Packagist is the main Composer repository. It aggregates public PHP packages installable with Composer.</p>
+
+        {error != null &&
+          <div class="alert alert-danger">
+            <h3>Error calling the API</h3>
+            <p>The API from packagist.org did not answered correctly. Please report this error.</p>
+          </div>
+        }
 
         {/* Render PHP packages */}
         {items != null &&
