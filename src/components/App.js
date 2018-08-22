@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import Pack from './Pack.js';
+import LoadingSpinner from './LoadingSpinner.js';
 import axios from 'axios';
 import '../styles/App.css';
 
@@ -10,7 +11,8 @@ class App extends Component {
     this.state = {
       error: null,
       pack: '',
-      items: null
+      items: null,
+      loading: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,19 +27,22 @@ class App extends Component {
     event.preventDefault();
 
     const self = this;
-    axios.get('https://packagist.org/search.json', { params: { q: this.state.pack } })
+    this.setState({ loading: true }, () => {
+      axios.get('https://packagist.org/search.json', { params: { q: this.state.pack } })
       .then(function (response) {
         console.log(response.data);
-        self.setState({error: null, items: response.data});
+        self.setState({loading: false, error: null, items: response.data});
       })
       .catch(function (error) {
         console.log(error);
-        self.setState({items: null, error: error});
+        self.setState({loading: false, items: null, error: error});
       });
+    });
+    
   }
 
   render() {
-    const { error, items } = this.state;
+    const { loading, error, items } = this.state;
     return (
       <Container>
         <h1>Packagist</h1>
@@ -57,6 +62,11 @@ class App extends Component {
             <h3>Error calling the API</h3>
             <p>The API from packagist.org did not answered correctly. Please report this error.</p>
           </div>
+        }
+
+        {/* Render PHP packages */}
+        { loading &&
+          <LoadingSpinner />
         }
 
         {/* Render PHP packages */}
