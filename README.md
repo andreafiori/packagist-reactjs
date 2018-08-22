@@ -36,4 +36,5 @@ Run the project on localhost:3000
 ## Additional dependencies
 
 - [Reactstrap, ReactJS & Bootstrap](https://reactstrap.github.io/)
+- [Font Awesome](https://fontawesome.com/)
 - [Axios HTTP client](https://github.com/axios/axios)

@@ -27,14 +27,14 @@ class App extends Component {
     event.preventDefault();
 
     const self = this;
-    this.setState({ loading: true }, () => {
+    this.setState({ loading: true, error: null, items: null }, () => {
       axios.get('https://packagist.org/search.json', { params: { q: this.state.pack } })
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         self.setState({loading: false, error: null, items: response.data});
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         self.setState({loading: false, items: null, error: error});
       });
     });
@@ -46,7 +46,8 @@ class App extends Component {
     return (
       <Container>
         <h1>Packagist</h1>
-        <p>Search PHP package repository</p>
+        <p>Search PHP package repository<br />
+        Packagist is the main Composer repository. It aggregates public PHP packages installable with Composer.</p>
         <form className="form-inline" onSubmit={this.handleSubmit}>
             <div className="form-group mr-2 mb-2">
                 <label htmlFor="pack" className="sr-only">Package</label>
@@ -55,8 +56,6 @@ class App extends Component {
             <button type="submit" className="btn btn-primary mb-2" title="Start a research">Search</button>
         </form>
 
-        <p>Packagist is the main Composer repository. It aggregates public PHP packages installable with Composer.</p>
-
         {error != null &&
           <div className="alert alert-danger">
             <h3>Error calling the API</h3>
@@ -64,12 +63,10 @@ class App extends Component {
           </div>
         }
 
-        {/* Render PHP packages */}
         { loading &&
           <LoadingSpinner />
         }
 
-        {/* Render PHP packages */}
         {items != null &&
           <div><Pack packages={items} /></div>
         }
