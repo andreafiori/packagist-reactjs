@@ -18,3 +18,20 @@ Install dependencies:
 Run the project on localhost:3000
 
   npm start
+
+## Run the tests
+
+  npm test
+
+## Build project
+
+  npm run build
+
+## Resources
+
+- [Packagist API documentation](https://packagist.org/apidoc)
+
+## Additional dependencies
+
+- [Reactstrap, ReactJS & Bootstrap](https://reactstrap.github.io/)
+- [Axios HTTP client](https://github.com/axios/axios)

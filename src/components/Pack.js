@@ -6,13 +6,6 @@ class Pack extends Component {
     }
 
     render() {
-        const content = this.renderPackages();
-        return (
-            <div>{ content }</div>
-        );
-    }
-
-    renderPackages() {
         if (this.props.packages['results'].length > 0) {
             return this.props.packages['results'].map((pack) =>
                 <div key={pack.name}>
@@ -34,6 +27,7 @@ class Pack extends Component {
             </div>
         );
     }
+
 }
 
 export default Pack;
