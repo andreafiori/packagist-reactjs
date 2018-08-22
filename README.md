@@ -11,24 +11,26 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 Install dependencies:
 
-  npm install
+	npm install
 
 ## Run the project
 
 Run the project on localhost:3000
 
-  npm start
+	npm start
 
 ## Run the tests
 
-  npm test
+	npm test
 
 ## Build project
 
-  npm run build
+	npm run build
 
 ## Resources
 
+- [ReactJS](https://reactjs.org/)
+- [Jest](https://jestjs.io/)
 - [Packagist API documentation](https://packagist.org/apidoc)
 
 ## Additional dependencies
