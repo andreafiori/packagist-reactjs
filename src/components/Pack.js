@@ -15,7 +15,7 @@ class Pack extends Component {
                         </a>
                     </h3>
                     <p>{ pack.description }</p>
-                    <div><strong>Downloads</strong>: { pack.downloads }. <strong>Favorites</strong>: { pack.favers }</div>
+                    <div><i className="fa fa-download" aria-hidden="true"></i>: { pack.downloads } <i className="fa fa-star" aria-hidden="true"></i>: { pack.favers }</div>
                     <hr />
                 </div>
             );

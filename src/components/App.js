@@ -3,7 +3,6 @@ import { Container } from 'reactstrap';
 import Pack from './Pack.js';
 import LoadingSpinner from './LoadingSpinner.js';
 import axios from 'axios';
-import '../styles/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +40,14 @@ class App extends Component {
     
   }
 
+  onReset() {
+    this.setState({loading: false, pack: '', items: null, error: null});
+  }
+
+  canDisableButton() {
+    return (this.state.pack === '' && this.state.items === null) ? true : false;
+  }
+
   render() {
     const { loading, error, items } = this.state;
     return (
@@ -53,7 +60,8 @@ class App extends Component {
                 <label htmlFor="pack" className="sr-only">Package</label>
                 <input className="form-control" id="pack" type="text" placeholder="Package..." value={this.state.pack} onChange={this.handleChange} title="Type the package to search" />
             </div>
-            <button type="submit" className="btn btn-primary mb-2" title="Start a research">Search</button>
+            <button type="submit" className="btn btn-primary" title="Start a research">Search</button>
+            <button type="button" className="btn btn-danger ml-2" title="Reset form and result" disabled={this.canDisableButton()} onClick={this.onReset.bind(this)}>Reset</button>
         </form>
 
         {error != null &&
