@@ -28,16 +28,16 @@ class App extends Component {
     const self = this;
     this.setState({ loading: true, error: null, items: null }, () => {
       axios.get('https://packagist.org/search.json', { params: { q: this.state.pack } })
-      .then(function (response) {
-        // console.log(response.data);
-        self.setState({loading: false, error: null, items: response.data});
-      })
-      .catch(function (error) {
-        // console.log(error);
-        self.setState({loading: false, items: null, error: error});
-      });
+        .then(function (response) {
+          // console.log(response.data);
+          self.setState({loading: false, error: null, items: response.data});
+        })
+        .catch(function (error) {
+          // console.log(error);
+          self.setState({loading: false, items: null, error: error});
+        });
     });
-    
+
   }
 
   onReset() {
@@ -56,12 +56,12 @@ class App extends Component {
         <p>Search PHP package repository<br />
         Packagist is the main Composer repository. It aggregates public PHP packages installable with Composer.</p>
         <form className="form-inline" onSubmit={this.handleSubmit}>
-            <div className="form-group mr-2 mb-2">
-                <label htmlFor="pack" className="sr-only">Package</label>
-                <input className="form-control" id="pack" type="text" placeholder="Package..." value={this.state.pack} onChange={this.handleChange} title="Type the package to search" />
-            </div>
-            <button type="submit" className="btn btn-primary" title="Start a research">Search</button>
-            <button type="button" className="btn btn-danger ml-2" title="Reset form and result" disabled={this.canDisableButton()} onClick={this.onReset.bind(this)}>Reset</button>
+          <div className="form-group mr-2 mb-2">
+            <label htmlFor="pack" className="sr-only">Package</label>
+            <input className="form-control" required="required" id="pack" type="text" placeholder="Package..." value={this.state.pack} onChange={this.handleChange} title="Type the package to search" />
+          </div>
+          <button type="submit" className="btn btn-primary" title="Start a research">Search</button>
+          <button type="button" className="btn btn-danger ml-2" title="Reset form and result" disabled={this.canDisableButton()} onClick={this.onReset.bind(this)}>Reset</button>
         </form>
 
         {error != null &&

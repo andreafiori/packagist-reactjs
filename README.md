@@ -25,16 +25,44 @@ Run the project on localhost:3000
 
 ## Build project
 
+Builds static files to deploy on server:
+
 	npm run build
+
+## Code Linter
+
+Launch ESLint from the local installation:
+
+### Windows:
+
+All JS files:
+
+	node_modules\.bin\eslint src\components\*.js
+
+Single file:
+
+	node_modules\.bin\eslint src\components\<filename.js>
+
+### Linux:
+
+All JS files:
+
+	./node_modules/.bin/eslint src/components/*.js
+
+Single file:
+
+	./node_modules/.bin/eslint src/components/<filename.js>
 
 ## Resources
 
 - [ReactJS](https://reactjs.org/)
 - [Jest](https://jestjs.io/)
 - [Packagist API documentation](https://packagist.org/apidoc)
+- [Javascript standard](https://standardjs.com/)
 
 ## Additional dependencies
 
-- [Reactstrap, ReactJS & Bootstrap](https://reactstrap.github.io/)
+- [Reactstrap](https://reactstrap.github.io/)
 - [Font Awesome](https://fontawesome.com/)
 - [Axios HTTP client](https://github.com/axios/axios)
+- [ESLint](https://eslint.org/)
