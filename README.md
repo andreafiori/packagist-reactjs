@@ -1,5 +1,7 @@
 # Packagist search
 
+[![Build Status](https://travis-ci.org/andreafiori/packagist-reactjs.svg?branch=master)](https://travis-ci.org/andreafiori/packagist-reactjs)
+
 Search PHP package repositories using the Packagist.org APIs.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
