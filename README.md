@@ -17,7 +17,7 @@ Install dependencies:
 
 ## Run the project
 
-Run the project on localhost:3000
+Run the project on http://localhost:3000
 
 	npm start
 
