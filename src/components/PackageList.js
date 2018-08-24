@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Pack extends Component {
+class PackageList extends Component {
     static defaultProps = {
       packages: {results: []}
     }
@@ -23,11 +23,12 @@ class Pack extends Component {
 
       return (
         <div className="alert alert-warning">
-          <h3>No packages were found</h3>
+          <h3>No packages</h3>
+          <p>No PHP repositories were found. Please do a new research.</p>
         </div>
       );
     }
 
 }
 
-export default Pack;
+export default PackageList;

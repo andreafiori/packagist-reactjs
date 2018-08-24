@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import Pack from './Pack.js';
+import PackageList from './PackageList.js';
 import LoadingSpinner from './LoadingSpinner.js';
 import axios from 'axios';
 
@@ -76,7 +76,7 @@ class App extends Component {
         }
 
         {items != null &&
-          <div><Pack packages={items} /></div>
+          <div><PackageList packages={items} /></div>
         }
       </Container>
     );
