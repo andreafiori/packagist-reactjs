@@ -61,6 +61,7 @@ Single file:
 - [Jest](https://jestjs.io/)
 - [Packagist API documentation](https://packagist.org/apidoc)
 - [Javascript standard](https://standardjs.com/)
+- [Github page link](https://andreafiori.github.io/packagist-reactjs/) Not active
 
 ## Additional dependencies
 
