@@ -52,9 +52,8 @@ class App extends Component {
     const { loading, error, items } = this.state;
     return (
       <Container>
-        <h1>Packagist</h1>
-        <p>Search PHP package repository<br />
-        Packagist is the main Composer repository. It aggregates public PHP packages installable with Composer.</p>
+        <h1>Search PHP package using the Packagist APIs</h1>
+        <p>Packagist is the main Composer repository. It aggregates public PHP packages installable with Composer.</p>
         <form className="form-inline" onSubmit={this.handleSubmit}>
           <div className="form-group mr-2 mb-2">
             <label htmlFor="pack" className="sr-only">Package</label>

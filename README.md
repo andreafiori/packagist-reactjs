@@ -1,8 +1,8 @@
-# Packagist search
+# Search PHP package using the Packagist APIs
 
 [![Build Status](https://travis-ci.org/andreafiori/packagist-reactjs.svg?branch=master)](https://travis-ci.org/andreafiori/packagist-reactjs)
 
-Search PHP package repositories using the Packagist.org APIs.
+Search PHP package repositories to add to your dependencies using the Packagist.org APIs.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -24,6 +24,14 @@ Run the project on http://localhost:3000
 ## Run the tests
 
 	npm test
+
+OR
+
+    npm run test
+
+Generate code coverage reports
+
+    npm run test -- --coverage
 
 ## Build project
 
@@ -58,7 +66,6 @@ Single file:
 ## Resources
 
 - [ReactJS](https://reactjs.org/)
-- [Jest](https://jestjs.io/)
 - [Packagist API documentation](https://packagist.org/apidoc)
 - [Javascript standard](https://standardjs.com/)
 - [Github page link](https://andreafiori.github.io/packagist-reactjs/) Not active
@@ -68,4 +75,6 @@ Single file:
 - [Reactstrap](https://reactstrap.github.io/)
 - [Font Awesome](https://fontawesome.com/)
 - [Axios HTTP client](https://github.com/axios/axios)
+- [Jest](https://jestjs.io/)
+- [Enzyme](https://github.com/airbnb/enzyme)
 - [ESLint](https://eslint.org/)
