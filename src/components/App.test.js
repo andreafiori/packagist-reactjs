@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import App from './App';
 import mockAxios from "axios";
-// import unsplash from "../unsplash";
 
 describe('renders without crashing', () => {
   const app = shallow(<App />);
   const state = {
-    error: null,
     pack: '',
     items: null,
     loading: false,
+    error: null
   };
 
   it('renders correctly', () => {

@@ -8,10 +8,10 @@ class App extends Component {
     super();
 
     this.state = {
-      error: null,
       pack: '',
       items: null,
-      loading: false
+      loading: false,
+      error: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -69,7 +69,7 @@ class App extends Component {
         }
 
         { items != null &&
-          <div><PackageList packages={items} /></div>
+          <PackageList packages={items} />
         }
       </Container>
     );
