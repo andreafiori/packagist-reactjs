@@ -35,18 +35,7 @@ describe('PackageList', () => {
 
   it('renders with one or more packages', () => {
     const div = document.createElement('div');
-    const packages = {
-      results: [
-        {
-          name: 'package 1',
-          url: 'http://packagist.example.org/',
-          description: 'package 1 description',
-          download: 'download',
-        }
-      ]
-    };
-
-    ReactDOM.render(<PackageList packages={packages} />, div);
+    ReactDOM.render(<PackageList packages={props} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 

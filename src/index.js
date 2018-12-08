@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
-/* IE Polyfills */
+/* Polyfills */
 import 'core-js/es6/map';
 import 'core-js/es6/set';
 import 'raf/polyfill';
