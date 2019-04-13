@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import PackageList from './PackageList.js';
+import LoadingSpinner from './LoadingSpinner.js';
 import axios from 'axios';
 
 class App extends Component {
@@ -47,7 +48,7 @@ class App extends Component {
   }
 
   render() {
-    const { error, items } = this.state;
+    const { loading, error, items } = this.state;
     return (
       <Container>
         <h1>Search PHP package using the Packagist APIs</h1>
@@ -60,6 +61,10 @@ class App extends Component {
           <button type="submit" id="btn-search" className="btn btn-primary" title="Start a research">Search</button>
           <button type="button" className="btn btn-danger ml-2" title="Reset form and result" disabled={this.canDisableButton()} onClick={this.onReset.bind(this)}>Reset</button>
         </form>
+
+        { loading === true && error === null &&
+          <LoadingSpinner />
+        }
 
         { error != null &&
           <div className="alert alert-danger">

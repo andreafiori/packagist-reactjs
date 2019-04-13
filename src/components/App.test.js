@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import App from './App';
-import mockAxios from "axios";
 
 describe('renders without crashing', () => {
   const app = shallow(<App />);
