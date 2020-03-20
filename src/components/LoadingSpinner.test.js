@@ -1,9 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import LoadingSpinner from './LoadingSpinner';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<LoadingSpinner />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it('CheckboxWithLabel changes the text after click', () => {
+  const res = render(
+    <LoadingSpinner />,
+  );
+
+  expect(res).toBeTruthy();
 });
